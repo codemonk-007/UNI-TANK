@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Definitive Master's CS/AI Admissions Dossier</title>
     <style>
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
         :root {
             --primary-color: #0f172a;
             --secondary-color: #1e40af;
@@ -153,6 +156,150 @@
             padding: 10px 15px;
             margin: 10px 0;
             font-style: italic;
+        }
+
+        /* ============================================
+           RESPONSIVE — TABLET
+           ============================================ */
+        @media (max-width: 1024px) {
+            .container { padding: 22px; }
+        }
+
+        /* ============================================
+           RESPONSIVE — PHONE (stacked cards)
+           ============================================ */
+        @media (max-width: 860px) {
+            body {
+                padding: 10px;
+                font-size: 15px;
+                overflow-x: hidden;
+            }
+            .container {
+                padding: 16px 14px;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px -3px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+                font-size: 1.2rem;
+                line-height: 1.35;
+                padding-bottom: 10px;
+            }
+            h2 { font-size: 1.05rem; margin-top: 26px; }
+            h3 { font-size: 0.95rem; }
+
+            .profile-banner {
+                padding: 14px 15px;
+                border-left-width: 4px;
+                margin-bottom: 22px;
+            }
+            .profile-banner strong { font-size: 0.98rem; }
+            .profile-banner ul {
+                grid-template-columns: 1fr;
+                padding-left: 16px;
+                gap: 7px;
+                font-size: 0.9rem;
+            }
+
+            /* ---- Tables collapse into stacked cards ---- */
+            table,
+            tbody,
+            tr,
+            td { display: block; width: 100%; }
+            thead { display: none; }
+            table {
+                box-shadow: none;
+                background: transparent;
+                margin-top: 12px;
+                margin-bottom: 22px;
+            }
+            tbody tr {
+                margin-bottom: 12px;
+                border: 1px solid var(--table-border);
+                border-radius: 9px;
+                background: #fff;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+                overflow: hidden;
+            }
+            tbody tr:nth-child(even):not(.region-row),
+            tbody tr:hover:not(.region-row) { background: #fff; }
+
+            tbody td {
+                border: none;
+                border-bottom: 1px solid #eef2f7;
+                padding: 10px 12px;
+                font-size: 0.86rem;
+                overflow-wrap: break-word;
+                word-break: break-word;
+            }
+            tbody td:last-child { border-bottom: none; }
+
+            /* Auto-injected column labels (main matrix table) */
+            .container > table tbody tr:not(.region-row) td:nth-child(1)::before { content: "University"; }
+            .container > table tbody tr:not(.region-row) td:nth-child(2)::before { content: "Target Tracks"; }
+            .container > table tbody tr:not(.region-row) td:nth-child(3)::before { content: "Application Deadlines"; }
+            .container > table tbody tr:not(.region-row) td:nth-child(4)::before { content: "Strategy"; }
+
+            /* Auto-injected column labels (semester trajectory table) */
+            .section-box table tbody tr td:nth-child(1)::before { content: "Semester"; }
+            .section-box table tbody tr td:nth-child(2)::before { content: "SGPA"; }
+            .section-box table tbody tr td:nth-child(3)::before { content: "Key Courses & Grades"; }
+            .section-box table tbody tr td:nth-child(4)::before { content: "Strategic Interpretation"; }
+
+            .container > table tbody td::before,
+            .section-box table tbody td::before {
+                display: block;
+                font-size: 0.66rem;
+                font-weight: 700;
+                letter-spacing: 0.7px;
+                text-transform: uppercase;
+                color: var(--secondary-color);
+                margin-bottom: 5px;
+            }
+
+            /* Region separator rows stay as full-width banners */
+            tbody tr.region-row {
+                margin: 16px 0 10px;
+                border: none;
+                border-radius: 6px;
+                background: transparent;
+                box-shadow: none;
+            }
+            tbody tr.region-row td {
+                border: none;
+                background: var(--region-bg);
+                border-radius: 6px;
+                padding: 9px 10px;
+                font-size: 0.8rem;
+                letter-spacing: 0.8px;
+                text-align: center;
+            }
+            tbody tr.region-row td::before { content: none; }
+
+            /* Strategy blocks inside cards */
+            .strat-block { margin-bottom: 9px; }
+            .strat-label { font-size: 0.8rem; }
+            td ul { padding-left: 16px; margin-top: 3px; }
+            td ul li { margin-bottom: 3px; }
+
+            .section-box { padding: 13px 12px; border-radius: 8px; }
+            .highlight-box { padding: 10px 12px; font-size: 0.88rem; }
+
+            th, td, p, li { overflow-wrap: break-word; word-break: break-word; }
+        }
+
+        /* ============================================
+           RESPONSIVE — SMALL PHONES
+           ============================================ */
+        @media (max-width: 480px) {
+            body { padding: 8px; font-size: 14.5px; }
+            .container { padding: 13px 11px; }
+            h1 { font-size: 1.05rem; }
+            h2 { font-size: 0.98rem; }
+            tbody td { font-size: 0.82rem; padding: 9px 10px; }
+            .profile-banner ul { font-size: 0.85rem; }
+            tbody tr.region-row td { font-size: 0.72rem; letter-spacing: 0.5px; }
+            .section-box { padding: 11px 10px; }
+            .highlight-box { font-size: 0.84rem; }
         }
     </style>
 </head>
